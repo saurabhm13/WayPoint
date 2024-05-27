@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -66,4 +67,15 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    // Coil
+    implementation("io.coil-kt:coil-compose:2.6.0")
+
+    // Blur effect
+    implementation("dev.chrisbanes.haze:haze-jetpack-compose:0.5.4")
+    implementation("dev.chrisbanes.haze:haze-materials:0.5.4")
+
+    // Compose Navigation
+    implementation("androidx.navigation:navigation-compose:2.4.0-alpha10")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
 }
