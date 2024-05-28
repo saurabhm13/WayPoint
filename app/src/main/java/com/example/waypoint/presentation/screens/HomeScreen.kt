@@ -244,7 +244,7 @@ private fun TopSection() {
                 shape = RoundedCornerShape(5.dp),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(45.dp)
+                    .height(50.dp)
                     .padding(horizontal = 30.dp),
                 colors = TextFieldDefaults.colors(
                     focusedContainerColor = Color.White,
