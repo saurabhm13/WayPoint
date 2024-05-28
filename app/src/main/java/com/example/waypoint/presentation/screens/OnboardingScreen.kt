@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.waypoint.R
+import com.example.waypoint.presentation.navigation.Screens
 import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.haze
 import dev.chrisbanes.haze.hazeChild
@@ -113,7 +114,7 @@ fun OnboardingScreen(
                             .clip(RoundedCornerShape(5.dp))
                             .clickable {
                                 navController.popBackStack()
-//                                navController.navigate(Screens.HomeScreen.route)
+                                navController.navigate(Screens.HomeScreen.route)
                             },
                         shape = RoundedCornerShape(5.dp),
                         color = MaterialTheme.colorScheme.primary

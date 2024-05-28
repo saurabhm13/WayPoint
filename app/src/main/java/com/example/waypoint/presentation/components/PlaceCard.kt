@@ -40,7 +40,8 @@ import com.example.waypoint.ui.theme.Yellow
 
 @Composable
 fun PlaceCard(
-    place: Place
+    place: Place,
+    onClick: () -> Unit
 ) {
 
     var isFavorite by remember {
@@ -53,7 +54,8 @@ fun PlaceCard(
             .shadow(
                 elevation = 3.dp,
                 shape = RoundedCornerShape(15.dp)
-            ),
+            )
+            .clickable(onClick = onClick),
         shape = RoundedCornerShape(15.dp)
     ) {
         Column(
@@ -100,20 +102,20 @@ fun PlaceCard(
                     modifier = Modifier.weight(1F),
                     text = place.name, style = MaterialTheme.typography.titleSmall
                 )
-                Spacer(modifier = Modifier.width(4.dp))
-                Icon(
-                    modifier = Modifier.size(15.dp),
-                    painter = painterResource(id = R.drawable.star),
-                    contentDescription = stringResource(
-                        id = R.string.rating
-                    ),
-                    tint = Yellow
-                )
-                Spacer(modifier = Modifier.width(4.dp))
-                Text(
-                    text = place.rating.toString(),
-                    style = MaterialTheme.typography.labelMedium.copy(color = Color.Gray)
-                )
+//                Spacer(modifier = Modifier.width(4.dp))
+//                Icon(
+//                    modifier = Modifier.size(15.dp),
+//                    painter = painterResource(id = R.drawable.star),
+//                    contentDescription = stringResource(
+//                        id = R.string.rating
+//                    ),
+//                    tint = Yellow
+//                )
+//                Spacer(modifier = Modifier.width(4.dp))
+//                Text(
+//                    text = place.rating.toString(),
+//                    style = MaterialTheme.typography.labelMedium.copy(color = Color.Gray)
+//                )
             }
 
 //            Spacer(modifier = Modifier.height(4.dp))
@@ -131,7 +133,7 @@ fun PlaceCard(
                 Spacer(modifier = Modifier.width(8.dp))
                 Text(
                     text = place.location,
-                    style = MaterialTheme.typography.labelMedium
+                    style = MaterialTheme.typography.labelSmall
                 )
 
             }
@@ -143,5 +145,5 @@ fun PlaceCard(
 @Preview
 @Composable
 fun PlaceCardPreview() {
-    PlaceCard(place = placesList[0])
+    PlaceCard(place = placesList[0], onClick = {})
 }

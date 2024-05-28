@@ -1,7 +1,10 @@
 package com.example.waypoint.data
 
+import android.os.Parcelable
 import com.example.waypoint.R
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Place(
     val name: String,
     val image: List<Int>,
@@ -9,7 +12,7 @@ data class Place(
     val rating: Double,
     val ratingCount: Int,
     val description: String
-)
+): Parcelable
 
 val placesList = listOf(
     Place(
@@ -42,7 +45,7 @@ val placesList = listOf(
     Place(
         name = "Statue of Liberty",
         image = listOf(R.drawable.statue_of_liberty1, R.drawable.statue_of_liberty2, R.drawable.statue_of_liberty3, R.drawable.statue_of_liberty4, R.drawable.statue_of_liberty5, R.drawable.statue_of_liberty6),
-        location = "Agra, India",
+        location = "New York, USA",
         rating = 4.7,
         ratingCount = 6438,
         description = "The Statue of Liberty is a colossal neoclassical sculpture on Liberty Island in New York Harbor, within New York City. The copper statue, a gift to the U.S. from the people of France, was designed by French sculptor Frédéric Auguste Bartholdi and its metal framework was built by Gustave Eiffel."

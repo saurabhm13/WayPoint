@@ -58,6 +58,7 @@ import com.example.waypoint.data.travelServiceList
 import com.example.waypoint.presentation.components.CategoryCard
 import com.example.waypoint.presentation.components.PlaceCard
 import com.example.waypoint.presentation.components.TravelServiceCard
+import com.example.waypoint.presentation.navigation.Screens
 import com.example.waypoint.ui.theme.Brown
 
 @Composable
@@ -139,7 +140,13 @@ fun HomeScreen(
                 Spacer(modifier = Modifier.height(15.dp))
                 LazyRow {
                     items(placesList.size) { index ->
-                        PlaceCard(place = placesList[index])
+                        PlaceCard(place = placesList[index], onClick = {
+                            navController.currentBackStackEntry?.savedStateHandle?.set(
+                                key = "place",
+                                value = placesList[index]
+                            )
+                            navController.navigate(Screens.DetailsScreen.route)
+                        })
                     }
                 }
 
