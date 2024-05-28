@@ -12,5 +12,7 @@
     <string name="rating">Rating</string>
     <string name="location">Location</string>
     <string name="travel_services">Travel Services</string>
+    <string name="Photos">Photos</string>
+    <string name="overview">Overview</string>
 
 </resources>
