@@ -46,13 +46,13 @@ val Typography = Typography(
     labelLarge = TextStyle(
         fontFamily = amiriFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 20.sp
+        fontSize = 18.sp
     ),
 
     labelMedium = TextStyle(
         fontFamily = amiriFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 15.sp
+        fontSize = 16.sp
     ),
 
     labelSmall = TextStyle(

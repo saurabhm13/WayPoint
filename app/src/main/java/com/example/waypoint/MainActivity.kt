@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
 import androidx.navigation.compose.rememberNavController
+import com.example.waypoint.presentation.screens.HomeScreen
 import com.example.waypoint.presentation.screens.OnboardingScreen
 import com.example.waypoint.ui.theme.WayPointTheme
 
@@ -21,7 +22,7 @@ class MainActivity : ComponentActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             WayPointTheme {
-                OnboardingScreen(navController = rememberNavController())
+                HomeScreen(navController = rememberNavController())
             }
         }
     }

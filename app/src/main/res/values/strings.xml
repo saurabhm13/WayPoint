@@ -2,5 +2,15 @@
     <string name="app_name">WayPoint</string>
     <string name="onboarding_desc">It’s a big world out there go explore</string>
     <string name="get_started">Get Started</string>
+    <string name="menu">Menu</string>
+    <string name="user">User</string>
+    <string name="forest">Forest</string>
+    <string name="discover_places">Discover Places</string>
+    <string name="search">Search</string>
+    <string name="categories">Categories</string>
+    <string name="explore_places">Explore Places</string>
+    <string name="rating">Rating</string>
+    <string name="location">Location</string>
+    <string name="travel_services">Travel Services</string>
 
 </resources>
