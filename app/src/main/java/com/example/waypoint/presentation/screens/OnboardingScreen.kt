@@ -114,7 +114,7 @@ fun OnboardingScreen(
                             .clip(RoundedCornerShape(5.dp))
                             .clickable {
                                 navController.popBackStack()
-                                navController.navigate(Screens.HomeScreen.route)
+                                navController.navigate(Screens.HomeScreen)
                             },
                         shape = RoundedCornerShape(5.dp),
                         color = MaterialTheme.colorScheme.primary

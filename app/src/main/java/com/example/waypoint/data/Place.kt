@@ -1,9 +1,16 @@
 package com.example.waypoint.data
 
+import android.os.Build
+import android.os.Bundle
 import android.os.Parcelable
+import androidx.navigation.NavType
 import com.example.waypoint.R
 import kotlinx.parcelize.Parcelize
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 
+@Serializable
 @Parcelize
 data class Place(
     val name: String,
@@ -13,6 +20,29 @@ data class Place(
     val ratingCount: Int,
     val description: String
 ): Parcelable
+
+val customNavType = object : NavType<Place>(isNullableAllowed = false) {
+    override fun get(bundle: Bundle, key: String): Place? {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            bundle.getParcelable(key, Place::class.java) as Place
+        } else {
+            bundle.getParcelable<Place>(key) as Place
+        }
+    }
+
+    override fun parseValue(value: String): Place {
+        return Json.decodeFromString<Place>(value)
+    }
+
+    override fun put(bundle: Bundle, key: String, value: Place) {
+        bundle.putParcelable(key, value)
+    }
+
+    override fun serializeAsValue(value: Place): String {
+        return Json.encodeToString(value)
+    }
+
+}
 
 val placesList = listOf(
     Place(

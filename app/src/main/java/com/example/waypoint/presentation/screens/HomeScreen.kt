@@ -141,11 +141,7 @@ fun HomeScreen(
                 LazyRow {
                     items(placesList.size) { index ->
                         PlaceCard(place = placesList[index], onClick = {
-                            navController.currentBackStackEntry?.savedStateHandle?.set(
-                                key = "place",
-                                value = placesList[index]
-                            )
-                            navController.navigate(Screens.DetailsScreen.route)
+                            navController.navigate(Screens.DetailsScreen(place = placesList[index]))
                         })
                     }
                 }

@@ -1,21 +1,18 @@
 package com.example.waypoint.presentation.navigation
 
-import com.example.waypoint.presentation.navigation.ScreenConstants.DETAILS_SCREEN
-import com.example.waypoint.presentation.navigation.ScreenConstants.HOME_SCREEN
-import com.example.waypoint.presentation.navigation.ScreenConstants.ONBOARDING_SCREEN
+import com.example.waypoint.data.Place
+import kotlinx.serialization.Serializable
 
-sealed class Screens(val route: String) {
+sealed class Screens {
 
-    data object OnboardingScreen : Screens(ONBOARDING_SCREEN)
-    data object HomeScreen : Screens(HOME_SCREEN)
-    data object DetailsScreen : Screens(DETAILS_SCREEN)
+    @Serializable
+    object OnboardingScreen
 
-    fun withArg(vararg args: String): String {
-        return buildString {
-            append(route)
-            args.forEach { arg ->
-                append("/$arg")
-            }
-        }
-    }
+    @Serializable
+    object HomeScreen
+
+    @Serializable
+    data class DetailsScreen (
+        val place: Place
+    )
 }

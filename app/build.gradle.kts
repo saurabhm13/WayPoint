@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
+    kotlin("plugin.serialization") version "1.9.23"
 }
 
 android {
@@ -76,6 +77,6 @@ dependencies {
     implementation("dev.chrisbanes.haze:haze-materials:0.5.4")
 
     // Compose Navigation
-    implementation("androidx.navigation:navigation-compose:2.4.0-alpha10")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+    implementation("androidx.navigation:navigation-compose:2.8.0-alpha08")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
 }
